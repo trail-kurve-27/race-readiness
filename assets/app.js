@@ -255,19 +255,13 @@
   $("hyroxCount").innerHTML = "<b>Seit dem Umzug nach St. Gallen sind " + hx.length + " HYROX-Einheiten in Strava erfasst.</b> Für die Stationen als Engpass ist das wenig. Ziel bis Basel: mindestens eine pro Woche.";
 
   /* ------------------------------------------------------------ week plan */
-  const PLAN = [
-    { d: "2026-10-13", k: "easy", t: "Locker", s: "7 km, Puls unter 150.", w: "Runden um den Burgweiher", v: "7 km" },
-    { d: "2026-10-14", k: "gym", t: "HYROX", s: "Sled Push und Pull mit Wettkampfgewicht, Technik vor Tempo. Wall Balls 5 × 20, jede Wiederholung tief.", w: "Gym", v: "60 min" },
-    { d: "2026-10-15", k: "easy", t: "Locker", s: "8 km, am Ende 4 × 20 s Steigerungen.", w: "Burgweiher und Kreuzbleiche", v: "8 km" },
-    { d: "2026-10-16", k: "rest", t: "Ruhe", s: "Pause oder BJJ.", w: "", v: "0 km" },
-    { d: "2026-10-17", k: "hard", t: "Schwelle", s: "2 km ein, 3 × 8 min bei 4:30 bis 4:35/km mit 2 min Trab, 2 km aus.", w: "Gerade an der Kreuzbleiche oder Sitterweg", v: "11 km" },
-    { d: "2026-10-18", k: "long", t: "Lang", s: "14 km locker und flach, kein Höhenmeter-Tag.", w: "Zug nach Rorschach, Seeuferweg Richtung Arbon", v: "14 km" },
-    { d: "2026-10-19", k: "rest", t: "Ruhe", s: "Pause oder 30 min lockeres Radfahren.", w: "", v: "0 km" },
-  ];
-  $("weekLbl").textContent = "Nächste 7 Tage · " + dShort(PLAN[0].d) + " bis " + dShort(PLAN[6].d);
-  $("weekLede").textContent = "Etwa 40 km mit einer Qualitätseinheit. Paces sind aus der aktuellen Schätzung abgeleitet (" + hms(S.hm_now_s) + " Halbmarathon), nicht aus dem Ziel. Der Plan geht von einer Laufpause seit " + dShort(S.last_activity) + " aus. Falls du gelaufen bist und Strava es nur nicht zeigt, stimmt er nicht.";
+  const PLAN = window.PLAN || [];
+  if (PLAN.length) { $("weekLbl").textContent = "Nächste 7 Tage · " + dShort(PLAN[0].d) + " bis " + dShort(PLAN[PLAN.length - 1].d);
+  const PM = window.PLAN_META || {};
+  if (PM.title) $("weekH").textContent = PM.title;
+  $("weekLede").textContent = PM.lede || "";
   $("week").innerHTML = PLAN.map((p) => `<article class="day"><div class="dd"><b>${day(p.d).toLocaleDateString(LOC, { weekday: "short" })}</b><span class="small">${dShort(p.d)}</span></div>
-    <span class="kind ${p.k}">${p.t}</span><p>${esc(p.s)}</p>${p.w ? `<span class="where">${esc(p.w)}</span>` : ""}<span class="vol">${p.v}</span></article>`).join("");
+    <span class="kind ${p.k}">${p.t}</span><p>${esc(p.s)}</p>${p.w ? `<span class="where">${esc(p.w)}</span>` : ""}<span class="vol">${p.v}</span></article>`).join(""); }
 
   /* ------------------------------------------------------------ feed */
   const TYPE = { Run: "Lauf", TrailRun: "Traillauf", Hike: "Wanderung", Hyrox: "HYROX-Rennen", Workout: "Workout", Ride: "Rad", Swim: "Schwimmen", WeightTraining: "Kraft", RockClimbing: "Bouldern" };

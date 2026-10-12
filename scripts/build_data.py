@@ -1,7 +1,9 @@
 """Build the website's data file from a raw Strava extract.
 
-Reads   raw/activities.json  (Strava activities, incl. encoded GPS polylines)
-        raw/elevation.json   (Strava altitude streams per activity)
+Reads   source/activities.json  (Strava activity summaries, committed, no GPS)
+        source/elevation.json   (Strava altitude streams per activity, committed)
+        raw/polylines.json      (encoded GPS polylines by activity id, NEVER committed)
+        raw/privacy.json        (secret offset of the privacy circle, NEVER committed)
 Writes  data/data.js         (window.DATA = {...}, loaded by index.html)
 
 Privacy: raw/ is never published. GPS points within PRIVACY_RADIUS_M of the
@@ -15,14 +17,19 @@ from statistics import mean, median
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-TODAY = dt.date.fromisoformat(sys.argv[1]) if len(sys.argv) > 1 else dt.date.today()
+_args = [x for x in sys.argv[1:] if not x.startswith("--")]
+TODAY = dt.date.fromisoformat(_args[0]) if _args else dt.date.today()
 PRIVACY_RADIUS_M = 800
 RUN_TYPES = {"Run", "TrailRun"}
 HM_GOAL_S = 90 * 60
 HYROX_DATE = dt.date(2027, 2, 12)
 
-raw = json.loads((ROOT / "raw/activities.json").read_text(encoding="utf-8"))["activities"]
-alts = json.loads((ROOT / "raw/elevation.json").read_text(encoding="utf-8"))
+raw = json.loads((ROOT / "source/activities.json").read_text(encoding="utf-8"))["activities"]
+alts = json.loads((ROOT / "source/elevation.json").read_text(encoding="utf-8"))
+_polys = ROOT / "raw/polylines.json"
+polys = json.loads(_polys.read_text()) if _polys.exists() else {}
+for a in raw:
+    if a["id"] in polys: a["poly"] = polys[a["id"]]
 
 for a in raw:
     a["d"] = dt.date.fromisoformat(a["date"])
@@ -63,6 +70,9 @@ HOME = (median(p[0] for p in sg_starts), median(p[1] for p in sg_starts))
 # as the centre of the empty circle where all tracks end.
 _priv = ROOT / "raw/privacy.json"
 if not _priv.exists():
+    if "--init-privacy" not in sys.argv:
+        sys.exit("raw/privacy.json missing. Restore it (north_m, east_m) instead of generating a new one: "
+                 "a new offset next to old published versions would narrow down the home location.")
     import random
     ang, off = random.uniform(0, 2 * math.pi), random.uniform(250, 400)
     _priv.write_text(json.dumps({"north_m": off * math.cos(ang), "east_m": off * math.sin(ang)}))

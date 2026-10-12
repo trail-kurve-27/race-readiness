@@ -1,0 +1,861 @@
+{
+"_meta": {
+"source": "Strava MCP (list_activities, get_activity_performance)",
+"pulled": "2026-10-06",
+"notes": "dist m, mov s, elev m, re = Strava relative effort, hr = avg HR, w = avg running power (W). Duplicates merged: 2026-05-08 (manual 5k + watch workout), 2026-10-02 (manual 6.7 km + watch HR). GPS polylines are NOT stored here; they live in raw/polylines.json (gitignored)."
+},
+"activities": [
+{
+"id": "17562574654",
+"name": "Monte Scherbelino",
+"type": "Run",
+"date": "2026-03-01",
+"dist": 14458.8,
+"mov": 5798,
+"elev": 327,
+"re": 62
+},
+{
+"id": "17568126293",
+"name": "H1",
+"type": "Workout",
+"date": "2026-03-01",
+"dist": 0,
+"mov": 4323,
+"elev": 0,
+"re": 18
+},
+{
+"id": "17632051358",
+"name": "H2",
+"type": "Workout",
+"date": "2026-03-03",
+"dist": 0,
+"mov": 2662,
+"elev": 0,
+"re": 19
+},
+{
+"id": "17633823683",
+"name": "H3",
+"type": "Workout",
+"date": "2026-03-07",
+"dist": 0,
+"mov": 3116,
+"elev": 0,
+"re": 33
+},
+{
+"id": "17676594207",
+"name": "H4",
+"type": "Workout",
+"date": "2026-03-10",
+"dist": 0,
+"mov": 4714,
+"elev": 0,
+"re": 40
+},
+{
+"id": "17701209872",
+"name": "H5",
+"type": "Workout",
+"date": "2026-03-12",
+"dist": 0,
+"mov": 4075,
+"elev": 0,
+"re": 46
+},
+{
+"id": "17716907159",
+"name": "H6",
+"type": "Workout",
+"date": "2026-03-14",
+"dist": 0,
+"mov": 4224,
+"elev": 0,
+"re": 50
+},
+{
+"id": "17731941595",
+"name": "Hügelig",
+"type": "TrailRun",
+"date": "2026-03-15",
+"dist": 14579.3,
+"mov": 6284,
+"elev": 488,
+"re": 73
+},
+{
+"id": "17758205013",
+"name": "H7",
+"type": "Workout",
+"date": "2026-03-17",
+"dist": 0,
+"mov": 4884,
+"elev": 0,
+"re": 52
+},
+{
+"id": "17782988258",
+"name": "H8",
+"type": "Workout",
+"date": "2026-03-19",
+"dist": 0,
+"mov": 4693,
+"elev": 0,
+"re": 34
+},
+{
+"id": "17802883549",
+"name": "H9",
+"type": "Workout",
+"date": "2026-03-21",
+"dist": 0,
+"mov": 4462,
+"elev": 0,
+"re": 57
+},
+{
+"id": "17815930221",
+"name": "Rotenberg Weinberge",
+"type": "Run",
+"date": "2026-03-22",
+"dist": 18183.2,
+"mov": 7286,
+"elev": 560,
+"re": 74
+},
+{
+"id": "17845167709",
+"name": "H10",
+"type": "Workout",
+"date": "2026-03-24",
+"dist": 0,
+"mov": 4559,
+"elev": 0,
+"re": 59
+},
+{
+"id": "17868957173",
+"name": "H11",
+"type": "Workout",
+"date": "2026-03-26",
+"dist": 0,
+"mov": 5485,
+"elev": 0,
+"re": 39
+},
+{
+"id": "17902340245",
+"name": "Mal wieder flach",
+"type": "Run",
+"date": "2026-03-29",
+"dist": 13151.6,
+"mov": 3871,
+"elev": 119,
+"re": 103,
+"hr": 165.1,
+"w": 362.9
+},
+{
+"id": "17916133170",
+"name": "H12",
+"type": "Workout",
+"date": "2026-03-30",
+"dist": 0,
+"mov": 4111,
+"elev": 0,
+"re": 51
+},
+{
+"id": "18031006096",
+"name": "HOAM Social Run",
+"type": "Run",
+"date": "2026-04-08",
+"dist": 9878.5,
+"mov": 3368,
+"elev": 62,
+"re": 45
+},
+{
+"id": "18044283074",
+"name": "HYROX Simulation",
+"type": "Workout",
+"date": "2026-04-09",
+"dist": 0,
+"mov": 3954,
+"elev": 0,
+"re": 55
+},
+{
+"id": "18063095324",
+"name": "H14",
+"type": "Workout",
+"date": "2026-04-11",
+"dist": 0,
+"mov": 3398,
+"elev": 0,
+"re": 54
+},
+{
+"id": "18078072588",
+"name": "Oben Mitte Unten",
+"type": "Run",
+"date": "2026-04-12",
+"dist": 15139.6,
+"mov": 4871,
+"elev": 136,
+"re": 88
+},
+{
+"id": "18122093859",
+"name": "Evening Run",
+"type": "Run",
+"date": "2026-04-15",
+"dist": 10310.5,
+"mov": 3106,
+"elev": 70,
+"re": 55,
+"hr": 155.4,
+"w": 355.7
+},
+{
+"id": "18135035376",
+"name": "H15",
+"type": "Workout",
+"date": "2026-04-16",
+"dist": 0,
+"mov": 3958,
+"elev": 0,
+"re": 23
+},
+{
+"id": "18158985256",
+"name": "Kochel- & Walchensee",
+"type": "Hike",
+"date": "2026-04-18",
+"dist": 15566.3,
+"mov": 15242,
+"elev": 919,
+"re": 39
+},
+{
+"id": "18202077917",
+"name": "H16",
+"type": "Workout",
+"date": "2026-04-21",
+"dist": 0,
+"mov": 4641,
+"elev": 0,
+"re": 20
+},
+{
+"id": "18216061248",
+"name": "Mit Ori",
+"type": "Run",
+"date": "2026-04-22",
+"dist": 9790.2,
+"mov": 2883,
+"elev": 76,
+"re": 46
+},
+{
+"id": "18243855570",
+"name": "H17",
+"type": "Workout",
+"date": "2026-04-24",
+"dist": 0,
+"mov": 4706,
+"elev": 0,
+"re": 24
+},
+{
+"id": "18249052741",
+"name": "H18",
+"type": "Workout",
+"date": "2026-04-25",
+"dist": 0,
+"mov": 3699,
+"elev": 0,
+"re": 77
+},
+{
+"id": "18262806125",
+"name": "am Neckar",
+"type": "Run",
+"date": "2026-04-26",
+"dist": 21298.4,
+"mov": 6874,
+"elev": 34,
+"re": 72,
+"hr": 151.3,
+"w": 321.8
+},
+{
+"id": "18297019101",
+"name": "Intervalle + Full Body",
+"type": "Workout",
+"date": "2026-04-28",
+"dist": 0,
+"mov": 4664,
+"elev": 0,
+"re": 36
+},
+{
+"id": "18333731725",
+"name": "Spitzingsee Rotwand",
+"type": "Hike",
+"date": "2026-05-01",
+"dist": 14570.1,
+"mov": 13574,
+"elev": 1075.7,
+"re": null
+},
+{
+"id": "18390080466",
+"name": "H20",
+"type": "Workout",
+"date": "2026-05-05",
+"dist": 0,
+"mov": 4335,
+"elev": 0,
+"re": 28
+},
+{
+"id": "18402030293",
+"name": "Evening Run",
+"type": "Run",
+"date": "2026-05-06",
+"dist": 9161.5,
+"mov": 2983,
+"elev": 83,
+"re": 20
+},
+{
+"id": "18429464726",
+"name": "5 under 20",
+"type": "Run",
+"date": "2026-05-08",
+"dist": 5000,
+"mov": 1200,
+"elev": 0,
+"re": 40,
+"merged": "18429437377"
+},
+{
+"id": "18436033021",
+"name": "H22",
+"type": "Workout",
+"date": "2026-05-09",
+"dist": 0,
+"mov": 3789,
+"elev": 0,
+"re": 40
+},
+{
+"id": "18456030049",
+"name": "Freibad Saison geht los",
+"type": "Swim",
+"date": "2026-05-10",
+"dist": 2100,
+"mov": 2424,
+"elev": 0,
+"re": 25
+},
+{
+"id": "18481854986",
+"name": "Hügellabyrinth",
+"type": "Run",
+"date": "2026-05-12",
+"dist": 5185.2,
+"mov": 2108,
+"elev": 118,
+"re": 10
+},
+{
+"id": "18538754949",
+"name": "Stuttgart 1/2",
+"type": "Run",
+"race": "HM",
+"date": "2026-05-17",
+"dist": 21308.4,
+"mov": 5723,
+"elev": 95,
+"re": 192,
+"hr": 171.4,
+"w": 386.3
+},
+{
+"id": "18599942445",
+"name": "Evening Run",
+"type": "Run",
+"date": "2026-05-21",
+"dist": 7562.4,
+"mov": 3039,
+"elev": 183,
+"re": 14
+},
+{
+"id": "18639718257",
+"name": "HYROX Berlin Tempelhof (Duo, 1:18)",
+"type": "Hyrox",
+"race": "HYROX",
+"date": "2026-05-24",
+"dist": 9896.6,
+"mov": 3457,
+"elev": 30,
+"re": 92
+},
+{
+"id": "18645060839",
+"name": "Baustelle von Papa besuchen",
+"type": "Ride",
+"date": "2026-05-25",
+"dist": 46924.6,
+"mov": 6690,
+"elev": 304,
+"re": 48
+},
+{
+"id": "18728274732",
+"name": "Nickerchen am Schloss Solitude",
+"type": "Run",
+"date": "2026-05-31",
+"dist": 18103,
+"mov": 8020,
+"elev": 401,
+"re": 65
+},
+{
+"id": "18774164826",
+"name": "Naturkunde",
+"type": "Run",
+"date": "2026-06-03",
+"dist": 8420.8,
+"mov": 2414,
+"elev": 58,
+"re": 50,
+"hr": 159.0,
+"w": 365.3
+},
+{
+"id": "18788633253",
+"name": "Bouldern",
+"type": "RockClimbing",
+"date": "2026-06-04",
+"dist": 0,
+"mov": 4440,
+"elev": 0,
+"re": 9
+},
+{
+"id": "18855298682",
+"name": "Killesberg",
+"type": "Run",
+"date": "2026-06-09",
+"dist": 10540.8,
+"mov": 3852,
+"elev": 244,
+"re": 30
+},
+{
+"id": "18881859745",
+"name": "Auslauf",
+"type": "Run",
+"date": "2026-06-11",
+"dist": 16517.9,
+"mov": 5464,
+"elev": 141,
+"re": 63
+},
+{
+"id": "18918108436",
+"name": "Calistenics",
+"type": "WeightTraining",
+"date": "2026-06-14",
+"dist": 0,
+"mov": 4977,
+"elev": 0,
+"re": 13
+},
+{
+"id": "18947488803",
+"name": "Treppen steigen",
+"type": "Run",
+"date": "2026-06-16",
+"dist": 8068.7,
+"mov": 2883,
+"elev": 150,
+"re": 33
+},
+{
+"id": "19013229505",
+"name": "Auf Kinder aufpassen",
+"type": "WeightTraining",
+"date": "2026-06-21",
+"dist": 0,
+"mov": 4434,
+"elev": 0,
+"re": 11
+},
+{
+"id": "19024387799",
+"name": "Evening Run",
+"type": "Run",
+"date": "2026-06-22",
+"dist": 9700,
+"mov": 2967,
+"elev": 0,
+"re": null
+},
+{
+"id": "19038426540",
+"name": "Werder ist schön",
+"type": "Ride",
+"date": "2026-06-23",
+"dist": 83921.5,
+"mov": 12538,
+"elev": 385,
+"re": 107
+},
+{
+"id": "19051621438",
+"name": "Emom im Gleisi",
+"type": "WeightTraining",
+"date": "2026-06-24",
+"dist": 0,
+"mov": 4797,
+"elev": 0,
+"re": 12
+},
+{
+"id": "19063032376",
+"name": "Abkühlung bei 33 Grad",
+"type": "Swim",
+"date": "2026-06-25",
+"dist": 2397.8,
+"mov": 4046,
+"elev": 0,
+"re": 32
+},
+{
+"id": "19273685925",
+"name": "Colca Canyon",
+"type": "Hike",
+"date": "2026-07-11",
+"dist": 14900.6,
+"mov": 16985,
+"elev": 917.7,
+"re": null
+},
+{
+"id": "19368312682",
+"name": "Salkantay 1",
+"type": "Hike",
+"date": "2026-07-15",
+"dist": 8986.3,
+"mov": 9664,
+"elev": 596,
+"re": 62
+},
+{
+"id": "19368312837",
+"name": "Salkantay 2",
+"type": "Hike",
+"date": "2026-07-16",
+"dist": 22233.3,
+"mov": 24062,
+"elev": 731,
+"re": 101
+},
+{
+"id": "19368312746",
+"name": "Salkantay 3",
+"type": "Hike",
+"date": "2026-07-17",
+"dist": 11893.2,
+"mov": 11756,
+"elev": 289,
+"re": 45
+},
+{
+"id": "19368316334",
+"name": "Salkantay 4",
+"type": "Hike",
+"date": "2026-07-18",
+"dist": 25032.6,
+"mov": 22928,
+"elev": 1094,
+"re": 82
+},
+{
+"id": "19382775798",
+"name": "Salkantay 5 - Machu Picchu",
+"type": "Hike",
+"date": "2026-07-19",
+"dist": 6972.6,
+"mov": 9351,
+"elev": 595,
+"re": 42
+},
+{
+"id": "19422114529",
+"name": "Rainbow Mountain + Red Valley",
+"type": "Hike",
+"date": "2026-07-22",
+"dist": 8525.8,
+"mov": 8994,
+"elev": 483,
+"re": null
+},
+{
+"id": "19560350716",
+"name": "Isla del Sol",
+"type": "Hike",
+"date": "2026-07-26",
+"dist": 18126.2,
+"mov": 16377,
+"elev": 549,
+"re": 51
+},
+{
+"id": "19604489695",
+"name": "Churup Lagoon",
+"type": "Hike",
+"date": "2026-08-04",
+"dist": 9593.8,
+"mov": 13446,
+"elev": 823,
+"re": 62
+},
+{
+"id": "19674307699",
+"name": "Santa Cruz - Day 1",
+"type": "Hike",
+"date": "2026-08-06",
+"dist": 13456.2,
+"mov": 12583,
+"elev": 629,
+"re": 64
+},
+{
+"id": "19674307706",
+"name": "Santa Cruz - Day 2 pt 1",
+"type": "Hike",
+"date": "2026-08-07",
+"dist": 7418.1,
+"mov": 10142,
+"elev": 854,
+"re": 45
+},
+{
+"id": "19674310371",
+"name": "Santa Cruz - Day 2 pt 2",
+"type": "Hike",
+"date": "2026-08-07",
+"dist": 4692.3,
+"mov": 5322,
+"elev": 10,
+"re": 16
+},
+{
+"id": "19673074121",
+"name": "Santa Cruz - Day 3",
+"type": "Hike",
+"date": "2026-08-08",
+"dist": 21956.7,
+"mov": 21514,
+"elev": 479.8,
+"re": null
+},
+{
+"id": "19673071269",
+"name": "Santa Cruz - Day 4",
+"type": "Hike",
+"date": "2026-08-09",
+"dist": 9727.6,
+"mov": 9063,
+"elev": 91.8,
+"re": null
+},
+{
+"id": "19753601982",
+"name": "Mit Mama",
+"type": "Swim",
+"date": "2026-08-15",
+"dist": 1012.5,
+"mov": 1755,
+"elev": 0,
+"re": 9
+},
+{
+"id": "19938694834",
+"name": "First time in ages",
+"type": "Run",
+"date": "2026-08-28",
+"dist": 8512.3,
+"mov": 2760,
+"elev": 47,
+"re": 58,
+"hr": 159.9,
+"w": 327.8
+},
+{
+"id": "20037344626",
+"name": "Freudenberg",
+"type": "Run",
+"date": "2026-09-04",
+"dist": 8552.3,
+"mov": 3137,
+"elev": 249,
+"re": 63
+},
+{
+"id": "20065397738",
+"name": "Morning Run",
+"type": "Run",
+"date": "2026-09-06",
+"dist": 7370.8,
+"mov": 2289,
+"elev": 87,
+"re": 39,
+"hr": 156.1,
+"w": 345.9
+},
+{
+"id": "20065398092",
+"name": "Zum Bodensee",
+"type": "Run",
+"date": "2026-09-06",
+"dist": 12615.5,
+"mov": 3762,
+"elev": 41,
+"re": 115,
+"hr": 170.6,
+"w": 334.2,
+"flag": "net downhill (~-3% avg grade)"
+},
+{
+"id": "20146375853",
+"name": "Schöner Kiez",
+"type": "Run",
+"date": "2026-09-12",
+"dist": 10413.3,
+"mov": 4694,
+"elev": 336,
+"re": 41
+},
+{
+"id": "20175245855",
+"name": "Bier und Bratwurst schnorren",
+"type": "Run",
+"date": "2026-09-14",
+"dist": 7939.7,
+"mov": 2945,
+"elev": 157,
+"re": 38
+},
+{
+"id": "20190664418",
+"name": "HYROX",
+"type": "Workout",
+"date": "2026-09-15",
+"dist": 0,
+"mov": 2234,
+"elev": 0,
+"re": 47
+},
+{
+"id": "20254157085",
+"name": "Höhenmeter fressen",
+"type": "Run",
+"date": "2026-09-20",
+"dist": 22000.5,
+"mov": 8233,
+"elev": 653,
+"re": 156,
+"hr": 158.7,
+"w": 301.0
+},
+{
+"id": "20271391102",
+"name": "Evening Run",
+"type": "Run",
+"date": "2026-09-21",
+"dist": 7833.9,
+"mov": 2847,
+"elev": 91,
+"re": 20,
+"hr": 145.3,
+"w": 302.0
+},
+{
+"id": "20287415428",
+"name": "Cycling + hyrox",
+"type": "Workout",
+"date": "2026-09-22",
+"dist": 0,
+"mov": 5798,
+"elev": 0,
+"re": 24
+},
+{
+"id": "20323649138",
+"name": "Main Lauf",
+"type": "Run",
+"date": "2026-09-25",
+"dist": 12674.3,
+"mov": 3597,
+"elev": 35.3,
+"re": null,
+"flag": "no HR recorded"
+},
+{
+"id": "20394661176",
+"name": "Letzten Sonnenstrahlen mitnehmen mit Elliott",
+"type": "Run",
+"date": "2026-09-30",
+"dist": 12937.1,
+"mov": 5782,
+"elev": 446,
+"re": 42
+},
+{
+"id": "20423262722",
+"name": "Intervalle",
+"type": "Run",
+"date": "2026-10-02",
+"dist": 6700,
+"mov": 2040,
+"elev": 0,
+"re": 30,
+"hr": 152.5,
+"merged": "20423166516",
+"flag": "manual distance, HR from watch entry"
+},
+{
+"id": "20451600461",
+"name": "Seealpsee: Long(high)run im Appenzeller Land",
+"type": "Run",
+"date": "2026-10-04",
+"dist": 29187.4,
+"mov": 12463,
+"elev": 1053,
+"re": 231,
+"hr": 158.4,
+"w": 271.7
+},
+{
+"id": "20463747896",
+"name": "Evening Run",
+"type": "Run",
+"date": "2026-10-05",
+"dist": 9672.3,
+"mov": 3408,
+"elev": 83,
+"re": 19,
+"hr": 141.5,
+"w": 309.4
+}
+]
+}
