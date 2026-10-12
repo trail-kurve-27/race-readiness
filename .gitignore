@@ -1,0 +1,4 @@
+# Raw Strava extract contains untrimmed GPS tracks. Never commit.
+raw/
+*.zip
+.DS_Store

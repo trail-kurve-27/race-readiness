@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<title>Formkurve</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,600..900&family=Instrument+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="assets/vendor/maplibre-gl.css">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<nav class="nav" aria-label="Hauptnavigation">
+  <div class="wrap">
+    <a class="brand" href="#top"><i aria-hidden="true"></i>Formkurve</a>
+    <ul>
+      <li><a class="link" href="#routen">Routen</a></li>
+      <li><a class="link" href="#belastung">Belastung</a></li>
+      <li><a class="link" href="#fitness">Fitness</a></li>
+      <li><a class="link" href="#prognose">Halbmarathon</a></li>
+      <li><a class="link" href="#hyrox">HYROX</a></li>
+      <li><a class="link" href="#woche">Woche</a></li>
+      <li><a class="link" href="#log">Aktivitäten</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <div class="meta"><span class="label" id="asof"></span><span class="label" id="lastact"></span></div>
+    <h1 id="headline"></h1>
+    <p class="lede" id="lede"></p>
+    <div class="goals" id="goals"></div>
+    <div class="status" id="status" role="status"><i class="dot" aria-hidden="true"></i><div><h3 id="statusT"></h3><p class="small" id="statusB"></p></div></div>
+  </div>
+</header>
+
+<section class="mapsec" id="routen" aria-label="Routen">
+  <div id="map" role="region" aria-label="3D-Karte der gewählten Route"></div>
+  <div class="routecard">
+    <div class="routehead">
+      <div><span class="label" id="rDate"></span><h3 id="rName"></h3></div>
+      <div class="arrows"><button class="iconbtn" id="prev" type="button" aria-label="Vorherige Route">&larr;</button><button class="iconbtn" id="next" type="button" aria-label="Nächste Route">&rarr;</button></div>
+    </div>
+    <div class="stats" id="rStats"></div>
+    <div class="profile" id="profileWrap"><canvas id="profile" aria-label="Höhenprofil"></canvas></div>
+    <select id="routeSel" aria-label="Route wählen"></select>
+  </div>
+</section>
+
+<section class="sec" id="belastung">
+  <div class="wrap">
+    <div class="sechead">
+      <div><span class="label">Belastung</span><h2>Volumen und Belastungsquote</h2></div>
+      <p class="lede">Laufkilometer pro Woche seit März. Die Lücke im Sommer ist die Südamerika-Reise: viel Wandern in der Höhe, kein Laufen vom 22. Juni bis 28. August.</p>
+    </div>
+    <div class="kpis" id="kpis"></div>
+    <div class="grid2">
+      <div class="card">
+        <div class="cardhead"><h3>Kilometer pro Woche</h3>
+          <div class="legend"><span><i class="sw" style="background:var(--ink)"></i>Laufen</span><span><i class="sw" style="background:#c9ccc8"></i>Wandern</span><span><i class="sw" style="background:var(--signal)"></i>Höhenmeter Laufen (rechte Achse)</span></div></div>
+        <div class="chart"><canvas id="cWeeks" aria-label="Wochenvolumen"></canvas></div>
+      </div>
+      <div class="card">
+        <div class="cardhead"><h3>Belastungsquote (acute:chronic ratio)</h3>
+          <p class="small">Letzte 7 Tage geteilt durch den Wochenschnitt der letzten 28 Tage. Grün: 0,8 bis 1,3. Rot: über 1,5, der Bereich, der in Studien am häufigsten mit Überlastungsverletzungen verbunden ist. Ein Warnsignal, keine Diagnose.</p></div>
+        <div class="chart"><canvas id="cAcwr" aria-label="Belastungsquote"></canvas></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec tint" id="fitness">
+  <div class="wrap">
+    <div class="sechead">
+      <div><span class="label">Fitness</span><h2 id="fitH"></h2></div>
+      <p class="lede">Effizienz (efficiency factor) ist Laufleistung pro Herzschlag in Watt pro bpm. Höher heißt: mehr Tempo für denselben Puls. Volle Punkte sind flache Läufe und fließen in die Schätzung ein. Leere Punkte sind hügelig oder bergab und nur zur Einordnung.</p>
+    </div>
+    <div class="card"><div class="chart"><canvas id="cEff" aria-label="Effizienz über Zeit"></canvas></div></div>
+  </div>
+</section>
+
+<section class="sec" id="prognose">
+  <div class="wrap">
+    <div class="sechead">
+      <div><span class="label">Halbmarathon</span><h2>Wann ist 1:30 realistisch?</h2></div>
+      <p class="lede">Ausgangspunkt ist die Schätzung aus der Effizienz, kein Testlauf. Wähle Renndatum und Trainingsumfang. Das Band zeigt, wie stark das Ergebnis vom Umfang abhängt.</p>
+    </div>
+    <div class="proj">
+      <div class="controls">
+        <div class="field"><label for="raceDate">Renndatum</label><input type="date" id="raceDate" value="2027-03-28" min="2026-10-19"></div>
+        <div class="field"><span class="label">Trainingsumfang</span>
+          <div class="seg" role="group" aria-label="Trainingsumfang">
+            <button type="button" data-r="low" aria-pressed="false">2 bis 3 Läufe pro Woche <small>locker</small></button>
+            <button type="button" data-r="mid" aria-pressed="true">4 Läufe, 1 Qualität <small>Basis</small></button>
+            <button type="button" data-r="high" aria-pressed="false">4 bis 5 Läufe, 2 Qualität <small>ambitioniert</small></button>
+          </div></div>
+        <p class="fine">Qualität heißt: Schwellen- oder Intervalleinheit. Die wöchentlichen Verbesserungsraten sind Faustregeln, nicht aus deinen Daten geschätzt.</p>
+      </div>
+      <div class="card">
+        <div class="result">
+          <div><span class="label">Prognose am Renntag</span><div class="big num" id="projT"></div></div>
+          <div><span class="label">Spanne</span><div class="num" id="projR" style="font-size:18px;font-weight:600"></div></div>
+          <div><span class="label">1:30 erreicht</span><div id="projHit" style="margin-top:4px"></div></div>
+        </div>
+        <div class="chart short"><canvas id="cProj" aria-label="Prognoseverlauf"></canvas></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec tint" id="hyrox">
+  <div class="wrap">
+    <div class="sechead">
+      <div><span class="label">HYROX Basel · 12. Februar 2027</span><h2>Die Stationen entscheiden, nicht das Laufen</h2></div>
+      <p class="lede">Ziel solo unter 1:10. Berlin (1:18) war ein Doppel mit geteilten Stationen und taugt deshalb nicht als Solo-Basis.</p>
+    </div>
+    <div class="split">
+      <div>
+        <span class="label">Grobe Aufteilung für 1:10</span>
+        <p><b>36 bis 38 min Laufen:</b> 8 × 1 km bei etwa 4:30 bis 4:45/km, ermüdet.<br><b>32 bis 34 min Stationen und Roxzone.</b></p>
+        <div class="race" aria-hidden="true"><i class="run"></i><i class="st"></i><i class="run"></i><i class="st"></i><i class="run"></i><i class="st"></i><i class="run"></i><i class="st"></i></div>
+        <div class="racelbl" aria-hidden="true"><span>1 km</span><span>SkiErg</span><span>1 km</span><span>Sled Push</span><span>1 km</span><span>Sled Pull</span><span>1 km</span><span>Burpee BJ</span></div>
+        <div class="race" aria-hidden="true"><i class="run"></i><i class="st"></i><i class="run"></i><i class="st"></i><i class="run"></i><i class="st"></i><i class="run"></i><i class="st"></i></div>
+        <div class="racelbl" aria-hidden="true"><span>1 km</span><span>Row</span><span>1 km</span><span>Farmers</span><span>1 km</span><span>Lunges</span><span>1 km</span><span>Wall Balls</span></div>
+        <p class="fine">Faustregel aus veröffentlichten HYROX-Zwischenzeiten, nicht aus deinen Daten.</p>
+      </div>
+      <div>
+        <span class="label">Was fehlt</span>
+        <p>Strava speichert deine HYROX-Einheiten nur als Dauer und Puls. Ohne Stationszeiten kann die Seite keinen Fortschritt bei Schlitten oder Wall Balls messen.</p>
+        <p>Schreib die Zeiten in die Beschreibung der Strava-Aktivität, zum Beispiel <b>„Sled Push 3:10, Wall Balls 6:05“</b>. Beim nächsten Update werden sie ausgelesen und hier als Verlauf gezeigt.</p>
+        <p class="small" id="hyroxCount"></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="woche">
+  <div class="wrap">
+    <div class="sechead">
+      <div><span class="label" id="weekLbl"></span><h2>Behutsam zurück ins Training</h2></div>
+      <p class="lede" id="weekLede"></p>
+    </div>
+    <div class="week" id="week"></div>
+  </div>
+</section>
+
+<section class="sec tint" id="log">
+  <div class="wrap">
+    <div class="sechead">
+      <div><span class="label">Aktivitäten</span><h2>Logbuch</h2></div>
+      <p class="lede">Alle Einheiten aus Strava seit März, neueste zuerst.</p>
+    </div>
+    <div class="card"><div class="feed" id="feed"></div><button class="more" id="more" type="button">Mehr anzeigen</button></div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <h3>Methode</h3>
+    <ol id="method"></ol>
+    <p class="fine">Daten: Strava. Karte: OpenFreeMap, © OpenStreetMap-Mitwirkende. Gelände: AWS Terrain Tiles (Mapzen, SRTM, swisstopo u.a.). GPS-Punkte im Umkreis von <span id="privR"></span> m um die Wohnadresse sind entfernt. Diese Seite ist nicht für Suchmaschinen freigegeben.</p>
+  </div>
+</footer>
+
+<script src="data/data.js"></script>
+<script src="assets/vendor/chart.umd.js"></script>
+<script src="assets/vendor/maplibre-gl.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>
