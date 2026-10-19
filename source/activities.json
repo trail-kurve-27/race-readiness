@@ -1,7 +1,7 @@
 {
 "_meta": {
 "source": "Strava MCP (list_activities, get_activity_performance)",
-"pulled": "2026-10-06",
+"pulled": "2026-10-19",
 "notes": "dist m, mov s, elev m, re = Strava relative effort, hr = avg HR, w = avg running power (W). Duplicates merged: 2026-05-08 (manual 5k + watch workout), 2026-10-02 (manual 6.7 km + watch HR). GPS polylines are NOT stored here; they live in raw/polylines.json (gitignored)."
 },
 "activities": [
@@ -251,7 +251,7 @@
 },
 {
 "id": "18216061248",
-"name": "Mit Ori",
+"name": "Lauf",
 "type": "Run",
 "date": "2026-04-22",
 "dist": 9790.2,
@@ -680,7 +680,7 @@
 },
 {
 "id": "19753601982",
-"name": "Mit Mama",
+"name": "Schwimmen",
 "type": "Swim",
 "date": "2026-08-15",
 "dist": 1012.5,
@@ -812,7 +812,7 @@
 },
 {
 "id": "20394661176",
-"name": "Letzten Sonnenstrahlen mitnehmen mit Elliott",
+"name": "Letzten Sonnenstrahlen mitnehmen",
 "type": "Run",
 "date": "2026-09-30",
 "dist": 12937.1,
@@ -856,6 +856,30 @@
 "re": 19,
 "hr": 141.5,
 "w": 309.4
+},
+{
+"id": "20566159380",
+"name": "Lunch Run",
+"type": "Run",
+"date": "2026-10-13",
+"dist": 6768.8,
+"mov": 3169,
+"elev": 256,
+"re": 19,
+"hr": 138.4,
+"w": 251.9
+},
+{
+"id": "20585239707",
+"name": "Evening Run",
+"type": "Run",
+"date": "2026-10-14",
+"dist": 10583,
+"mov": 3846,
+"elev": 117,
+"re": 28,
+"hr": 144.7,
+"w": 296.3
 }
 ]
 }
