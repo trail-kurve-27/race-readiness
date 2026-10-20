@@ -1,7 +1,7 @@
 {
 "_meta": {
 "source": "Strava MCP (list_activities, get_activity_performance)",
-"pulled": "2026-10-19",
+"pulled": "2026-10-20",
 "notes": "dist m, mov s, elev m, re = Strava relative effort, hr = avg HR, w = avg running power (W). Duplicates merged: 2026-05-08 (manual 5k + watch workout), 2026-10-02 (manual 6.7 km + watch HR). GPS polylines are NOT stored here; they live in raw/polylines.json (gitignored)."
 },
 "activities": [
@@ -880,6 +880,18 @@
 "re": 28,
 "hr": 144.7,
 "w": 296.3
+},
+{
+"id": "20650613932",
+"name": "Evening Run",
+"type": "Run",
+"date": "2026-10-19",
+"dist": 13782.7,
+"mov": 4477,
+"elev": 238,
+"re": 59,
+"hr": 151.7,
+"w": 338.6
 }
 ]
 }
